@@ -28,15 +28,30 @@
         .text-glow-fuchsia {
             text-shadow: 0 0 5px rgba(217, 70, 239, 0.5), 0 0 10px rgba(217, 70, 239, 0.5);
         }
-        /* Fade-in animation styles */
+        /* Fade-in animation styles - More noticeable */
         .fade-in-up {
             opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            transform: translateY(30px); /* Increased distance */
+            transition: opacity 1s ease-out, transform 1s ease-out; /* Slower transition */
         }
         .fade-in-up.visible {
             opacity: 1;
             transform: translateY(0);
+        }
+        /* Pulsing Glow Animation */
+        @keyframes pulse-glow-cyan {
+            0%, 100% { text-shadow: 0 0 5px rgba(6, 182, 212, 0.5), 0 0 10px rgba(6, 182, 212, 0.5); }
+            50% { text-shadow: 0 0 10px rgba(6, 182, 212, 0.8), 0 0 20px rgba(6, 182, 212, 0.5); }
+        }
+        @keyframes pulse-glow-fuchsia {
+            0%, 100% { text-shadow: 0 0 5px rgba(217, 70, 239, 0.5), 0 0 10px rgba(217, 70, 239, 0.5); }
+            50% { text-shadow: 0 0 10px rgba(217, 70, 239, 0.8), 0 0 20px rgba(217, 70, 239, 0.5); }
+        }
+        .animate-pulse-glow-cyan {
+            animation: pulse-glow-cyan 4s infinite ease-in-out;
+        }
+        .animate-pulse-glow-fuchsia {
+            animation: pulse-glow-fuchsia 4s infinite ease-in-out;
         }
     </style>
 </head>
@@ -47,7 +62,7 @@
 
         <!-- Header Section -->
         <header class="text-center mb-12 fade-in-up">
-            <h1 class="font-bungee text-4xl sm:text-5xl md:text-6xl text-cyan-400 text-glow-cyan uppercase tracking-wider">The OG Activist</h1>
+            <h1 class="font-bungee text-4xl sm:text-5xl md:text-6xl text-cyan-400 text-glow-cyan uppercase tracking-wider animate-pulse-glow-cyan">The OG Activist</h1>
             <h2 class="font-bungee text-3xl sm:text-4xl md:text-5xl text-white uppercase">Toke N' Paint Slam Jam</h2>
         </header>
 
@@ -59,7 +74,7 @@
 
                 <!-- When & Where Section -->
                 <section class="bg-slate-800/50 rounded-2xl p-6 border border-fuchsia-500/50 shadow-lg fade-in-up">
-                    <h3 class="font-bungee text-2xl text-fuchsia-400 text-glow-fuchsia mb-4">When & Where</h3>
+                    <h3 class="font-bungee text-2xl text-fuchsia-400 text-glow-fuchsia mb-4 animate-pulse-glow-fuchsia">When & Where</h3>
                     <div class="space-y-4">
                         <div class="flex items-center space-x-4">
                             <svg class="w-8 h-8 text-fuchsia-400 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0h18M-4.5 12h22.5" /></svg>
@@ -80,7 +95,7 @@
 
                 <!-- About the Event Section -->
                 <section class="fade-in-up">
-                    <h3 class="font-bungee text-2xl text-cyan-400 text-glow-cyan mb-4">About the Event</h3>
+                    <h3 class="font-bungee text-2xl text-cyan-400 text-glow-cyan mb-4 animate-pulse-glow-cyan">About the Event</h3>
                     <div class="space-y-4 text-slate-300 text-lg leading-relaxed">
                         <p>Join us as we make Oklahoma cannabis history! As we fight to end prohibition on this sacred plant, come together as a community for a group smoke session and to paint campaign signs for SQ 837, which launches in August.</p>
                         <p>We're holding a friendly competition for the most beautiful and artistically-driven sign. The winner will receive a special prize! We'll also have live music from an amazing lineup of local artists.</p>
@@ -92,7 +107,7 @@
 
                 <!-- Featured Artists Section -->
                 <section class="fade-in-up text-center">
-                    <h3 class="font-bungee text-2xl text-cyan-400 text-glow-cyan mb-2">Featuring Live Music From</h3>
+                    <h3 class="font-bungee text-2xl text-cyan-400 text-glow-cyan mb-2 animate-pulse-glow-cyan">Featuring Live Music From</h3>
                     <p class="text-slate-400 mb-6">Click an artist's name to be redirected to their social media!</p>
                     <div class="flex flex-wrap justify-center items-center gap-4 sm:gap-5">
                         <!-- Artist with link -->
@@ -109,7 +124,7 @@
                         </a>
                         <!-- Artist with link -->
                         <a href="https://www.instagram.com/annavalentine_music?igsh=MW85OXJhOHo3c3JkYg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" class="inline-block bg-slate-800 text-white font-bold py-2 px-4 rounded-full shadow-md border-2 border-transparent hover:border-fuchsia-400 hover:scale-105 transform transition-all duration-300 ease-in-out">
-                            Anna Valantine
+                            Anna Valentine
                         </a>
                         <!-- Artist with link -->
                         <a href="https://www.instagram.com/aaronsawyerofficial?igsh=aWJjdzQzM3pveTFk" target="_blank" rel="noopener noreferrer" class="inline-block bg-slate-800 text-white font-bold py-2 px-4 rounded-full shadow-md border-2 border-transparent hover:border-fuchsia-400 hover:scale-105 transform transition-all duration-300 ease-in-out">
@@ -131,7 +146,7 @@
             <!-- Right Column: RSVP Form -->
             <div class="lg:col-span-1">
                 <aside class="bg-slate-800/50 rounded-2xl p-6 border border-cyan-500/50 shadow-lg sticky top-8 fade-in-up">
-                    <h3 class="font-bungee text-2xl text-center text-cyan-400 text-glow-cyan mb-4">RSVP for the Event</h3>
+                    <h3 class="font-bungee text-2xl text-center text-cyan-400 text-glow-cyan mb-4 animate-pulse-glow-cyan">RSVP for the Event</h3>
                     
                     <p class="text-sm text-slate-300 mb-4 text-center">RSVP to this event by leaving your name, phone number, and message. The message box can be used to communicate any ideas for the event to the event coordinator. All phone numbers will be used in cases of updates and reminders for just this event!</p>
                     
@@ -153,7 +168,7 @@
                             </div>
                         </div>
                         <div class="mt-6">
-                            <button type="submit" id="submit-button" class="w-full font-bold text-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white py-3 px-6 rounded-lg hover:opacity-90 transition-opacity duration-200 shadow-lg">
+                            <button type="submit" id="submit-button" class="w-full font-bold text-lg bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-white py-3 px-6 rounded-lg hover:opacity-90 transition-opacity duration-200 shadow-lg animate-pulse">
                                 Send RSVP
                             </button>
                         </div>
@@ -221,10 +236,10 @@
         document.addEventListener('DOMContentLoaded', () => {
             const animatedElements = document.querySelectorAll('.fade-in-up');
             animatedElements.forEach((el, index) => {
-                // Stagger the animation start time
+                // Stagger the animation start time - Increased delay
                 setTimeout(() => {
                     el.classList.add('visible');
-                }, index * 150);
+                }, index * 200);
             });
         });
     </script>
